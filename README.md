@@ -15,5 +15,13 @@ type 'a ltree = LNode of 'a * (unit -> 'a ltree) * (unit -> 'a ltree)
   
   <code>layer_tree r</code> constructs an infinite tree where all nodes of the <strong><i>n</i></strong>th layer store the value <strong><i>n + r</i></strong>. We consider the root as layer <strong><i>0</i></strong>, so the root stores value <strong><i>r</i></strong>.
 </li>
-  
+  <li>
+  <code>interval_tree : float -> float -> (float * float) ltree</code><br>
+    <code>interval_tree l0 r0</code> constructs a tree where the left and right child of every node with interval <strong><i>(l,h)</i></strong> store the intervals 
+    <strong><i>( l , <sup>l+h</sup>&frasl;<sub>2</sub> )</i></strong> and <strong><i><br>
+    ( <sup>l+h</sup>&frasl;<sub>2</sub> , l )</i></strong> , respectively. The root stores the interval <strong><i>(l<sub>0</sub> , r<sub>0</sub>)</i></strong> passed as the function's arguments.
+  </li>
+  <li><code>rational_tree : int -> int -> (int * int) ltree</code><br>
+  <code>rational_tree n0 d0</code> 
+  </li>
 </ol>
